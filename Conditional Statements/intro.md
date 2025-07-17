@@ -46,3 +46,13 @@ SELECT
 
     An additional surcharge of 20% is added to the bill
 ```
+```sql
+SELECT *, 
+    CASE
+        WHEN units_consumed <= 50 THEN units_consumed * 0.5
+        WHEN units_consumed <= 150 THEN ((units_consumed - 50) * 0.75) + (50 * 0.5)
+        WHEN units_consumed <= 250 THEN ((units_consumed - 150) * 1.2) + (100 * 0.75) + (50 * 0.5)
+        ELSE ((units_consumed - 250) * 1.5) + (100 * 1.2) + (100 * 0.75) + (50 * 0.5)
+    END * 1.2 AS Charges  -- Applying 20% surcharge
+FROM Bill;
+```
