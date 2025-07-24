@@ -13,12 +13,12 @@ In real-world applications, storing everything in one table leads to redundancy 
 
 # 🔗 What is a JOIN in MySQL?
 A JOIN is used to combine rows from two or more tables based on a related column between them (usually a foreign key).
-
+```sql
 SELECT columns
 FROM table1
 JOIN table2
 ON table1.common_field = table2.common_field;
-
+```
 # 💡 Types of Joins in MySQL
 ## 1. INNER JOIN
 - Returns only matching rows from both tables.
